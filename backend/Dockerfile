@@ -12,6 +12,5 @@ COPY --from=builder /install /usr/local
 WORKDIR /srv
 COPY app ./app
 USER app
-VOLUME /data
 EXPOSE 8000
 CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
