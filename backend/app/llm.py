@@ -74,7 +74,6 @@ class LLMGateway:
                     timeout=self.s.request_timeout,
                     num_retries=0,  # we do the failover ourselves, key by key
                     caching=True,
-                    temperature=0.7,
                 )
                 if self.s.mock_llm:
                     kwargs["mock_response"] = "Mock reply to: " + messages[-1]["content"][:200]
